@@ -1,0 +1,51 @@
+export const categories = [
+  {
+    id: 1,
+    name: "Hard Covers Book",
+    itemCount: 24,
+    image: "/assets/media/collection/collection-1.png",
+    slug: "hard-covers-book",
+  },
+  {
+    id: 2,
+    name: "Writing Essentials",
+    itemCount: 42,
+    image: "/assets/media/collection/collection-2.png",
+    slug: "writing-essentials",
+  },
+  {
+    id: 3,
+    name: "Art & Craft Supplies",
+    itemCount: 18,
+    image: "/assets/media/collection/collection-3.png",
+    slug: "art-craft",
+  },
+  {
+    id: 4,
+    name: "Paper & Notebooks",
+    itemCount: 35,
+    image: "/assets/media/collection/collection-4.png",
+    slug: "paper-notebooks",
+  },
+  {
+    id: 5,
+    name: "Desk Organizers",
+    itemCount: 15,
+    image: "/assets/media/collection/collection-5.png",
+    slug: "desk-organizers",
+  },
+  {
+    id: 6,
+    name: "Luxury Fountain Pens",
+    itemCount: 12,
+    image: "/assets/media/collection/collection-6.png",
+    slug: "fountain-pens",
+  },
+  {
+    id: 7,
+    name: "Custom Planners",
+    itemCount: 29,
+    image: "/assets/media/collection/collection-7.png",
+    slug: "custom-planners",
+  },
+];
