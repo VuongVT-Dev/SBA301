@@ -13,8 +13,7 @@ export default function CategoryManagement({ categories, setCategories }) {
 
     const handleCreate = (data) => {
         const quantity = Number(data.quantity);
-        if (isNaN(quantity) || quantity < 0)
-        {
+        if (isNaN(quantity) || quantity < 0) {
             alert("Số lượng không được nhỏ hơn 0");
             return;
         }
@@ -30,8 +29,7 @@ export default function CategoryManagement({ categories, setCategories }) {
 
     const handleUpdate = (data) => {
         const quantity = Number(data.quantity);
-        if (isNaN(quantity) || quantity < 0)
-        {
+        if (isNaN(quantity) || quantity < 0) {
             alert("Số lượng không được nhỏ hơn 0");
             return;
         }
@@ -86,63 +84,63 @@ export default function CategoryManagement({ categories, setCategories }) {
 
             <table border="1" cellPadding="8" cellSpacing="0" style={{ width: "100%", borderCollapse: "collapse" }}>
                 <thead>
-                <tr style={{ background: "#f2f2f2" }}>
-                    <th>ID</th>
-                    <th>Hình Ảnh</th>
-                    <th>Tên Thể Loại</th>
-                    <th>Số Lượng</th>
-                    <th>Trạng Thái</th>
-                    <th>Hành Động</th>
-                </tr>
+                    <tr style={{ background: "#f2f2f2" }}>
+                        <th>ID</th>
+                        <th>Hình Ảnh</th>
+                        <th>Tên Thể Loại</th>
+                        <th>Số Lượng</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành Động</th>
+                    </tr>
                 </thead>
                 <tbody>
-                {displayedCategories.length > 0 ? (
-                    displayedCategories.map((category) => (
-                        <tr key={category.id} style={{ textAlign: "center" }}>
-                            <td>{category.id}</td>
-                            <td>
-                                <img
-                                    src={category.image.startsWith("blob:") ? category.image : `/${category.image}`}
-                                    alt={category.name}
-                                    style={{ width: "50px", height: "50px", objectFit: "cover", borderRadius: "4px" }}
-                                />
-                            </td>
-                            <td>{category.name}</td>
-                            <td>{category.quantity}</td>
-                            <td>
-                                <span style={{
-                                    padding: "4px 12px",
-                                    borderRadius: "12px",
-                                    fontSize: "12px",
-                                    fontWeight: "600",
-                                    backgroundColor: category.status === 1 ? "#dcfce7" : "#fee2e2",
-                                    color: category.status === 1 ? "#16a34a" : "#dc2626"
-                                }}>
-                                    {category.status === 1 ? "Active" : "Inactive"}
-                                </span>
-                            </td>
-                            <td>
-                                <button
-                                    onClick={() => { setModalMode("update"); setSelectedCategory(category); setIsModalOpen(true); }}
-                                    style={{ backgroundColor: "#fbbf24", color: "#fff", border: "none", padding: "6px 12px", borderRadius: "4px", cursor: "pointer" }}
-                                >
-                                    Sửa
-                                </button>
-                                {" "}
-                                <button
-                                    onClick={() => handleDelete(category.id)}
-                                    style={{ backgroundColor: "#dc2626", color: "#fff", border: "none", padding: "6px 12px", borderRadius: "4px", cursor: "pointer" }}
-                                >
-                                    Xóa
-                                </button>
-                            </td>
+                    {displayedCategories.length > 0 ? (
+                        displayedCategories.map((category) => (
+                            <tr key={category.id} style={{ textAlign: "center" }}>
+                                <td>{category.id}</td>
+                                <td>
+                                    <img
+                                        src={category.image.startsWith("blob:") ? category.image : `/${category.image}`}
+                                        alt={category.name}
+                                        style={{ width: "50px", height: "50px", objectFit: "cover", borderRadius: "4px" }}
+                                    />
+                                </td>
+                                <td>{category.name}</td>
+                                <td>{category.quantity}</td>
+                                <td>
+                                    <span style={{
+                                        padding: "4px 12px",
+                                        borderRadius: "12px",
+                                        fontSize: "12px",
+                                        fontWeight: "600",
+                                        backgroundColor: category.status === 1 ? "#dcfce7" : "#fee2e2",
+                                        color: category.status === 1 ? "#16a34a" : "#dc2626"
+                                    }}>
+                                        {category.status === 1 ? "Active" : "Inactive"}
+                                    </span>
+                                </td>
+                                <td>
+                                    <button
+                                        onClick={() => { setModalMode("update"); setSelectedCategory(category); setIsModalOpen(true); }}
+                                        style={{ backgroundColor: "#fbbf24", color: "#fff", border: "none", padding: "6px 12px", borderRadius: "4px", cursor: "pointer" }}
+                                    >
+                                        Sửa
+                                    </button>
+                                    {" "}
+                                    <button
+                                        onClick={() => handleDelete(category.id)}
+                                        style={{ backgroundColor: "#dc2626", color: "#fff", border: "none", padding: "6px 12px", borderRadius: "4px", cursor: "pointer" }}
+                                    >
+                                        Xóa
+                                    </button>
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan="6" style={{ textAlign: "center" }}>Không tìm thấy dữ liệu!</td>
                         </tr>
-                    ))
-                ) : (
-                    <tr>
-                        <td colSpan="6" style={{ textAlign: "center" }}>Không tìm thấy dữ liệu!</td>
-                    </tr>
-                )}
+                    )}
                 </tbody>
             </table>
 

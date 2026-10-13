@@ -1,8 +1,8 @@
 export const initialCategories = [
-    { id: 1, name: "Technology", image: "images/p1.png", quantity: 15, status: 1 },
-    { id: 2, name: "Business", image: "images/p2.png", quantity: 23, status: 1 },
-    { id: 3, name: "Sports", image: "images/p3.png", quantity: 8, status: 0 },
-    { id: 4, name: "Entertainment", image: "images/p4.png", quantity: 12, status: 1 },
+    { id: 1, name: "Technology", image: "images/p1.jpg", quantity: 15, status: 1 },
+    { id: 2, name: "Business", image: "images/p2.jpg", quantity: 23, status: 1 },
+    { id: 3, name: "Sports", image: "images/p3.jpg", quantity: 8, status: 0 },
+    { id: 4, name: "Entertainment", image: "images/p4.jpg", quantity: 12, status: 1 },
 ];
 
 export const initialNews = [
