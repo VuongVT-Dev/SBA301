@@ -22,6 +22,14 @@ export const initialNews = [
         createdBy: "Staff1",
         status: 1,
     },
+    {
+        id: 103,
+        title: "Oi doi oi",
+        content: "Pls save me!",
+        categoryId: 1,
+        createdBy: "Staff1",
+        status: 1,
+    },
 ];
 
 export const initialUsers = [
