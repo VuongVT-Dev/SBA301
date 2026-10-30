@@ -4,11 +4,11 @@ Hệ thống quản lý bản tin Đại học FPT (**FUNewsManagementSystem**) 
 
 ---
 
-## 1. Cấu trúc thư mục
+## 1. Cấu trúc thư mục (`BE` & `FE`)
 
 ```text
 a2vuongvt_ce191082/
-├── A2VuongVT_CE191082_BE/        # Project Spring Boot 3 RESTful API (Backend)
+├── BE/                           # Project Spring Boot 3 RESTful API (Backend)
 │   ├── pom.xml
 │   └── src/main/
 │       ├── java/fu/se/a2vuongvt_ce191082/
@@ -20,21 +20,28 @@ a2vuongvt_ce191082/
 │       │   └── controller/       # RESTful API Endpoints (/api/...)
 │       └── resources/
 │           └── application.properties
-├── src/                          # Project ReactJS Client (Frontend)
-│   ├── services/api.js           # Axios client gọi REST API
-│   ├── components/
-│   │   ├── PublicNewsView.jsx    # Xem tin tức Active công khai (không cần đăng nhập)
-│   │   ├── Login.jsx             # Đăng nhập bằng Email & Password
-│   │   ├── CrudModal.jsx         # Popup Dialog dùng chung cho Create / Update + Validation
-│   │   ├── AccountManagement.jsx # [Admin] CRUD + Search tài khoản (chặn xóa nếu đã tạo bài viết)
-│   │   ├── CategoryManagement.jsx# [Staff] CRUD + Search danh mục (chặn xóa nếu đã có bài viết)
-│   │   ├── NewsManagement.jsx    # [Staff] CRUD + Search bài viết & gắn thẻ (Tags)
-│   │   ├── ProfileManagement.jsx # [Staff] Quản lý hồ sơ cá nhân
-│   │   └── NewsHistory.jsx       # [Staff] Xem lịch sử bài viết đã tạo
-│   ├── App.jsx
-│   └── main.jsx
-├── package.json
-└── vite.config.js
+├── FE/                           # Project ReactJS Client (Frontend)
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── public/
+│   │   └── favicon.svg
+│   └── src/
+│       ├── services/
+│       │   └── api.js            # Axios client gọi REST API
+│       ├── components/
+│       │   ├── PublicNewsView.jsx    # Xem tin tức Active công khai (không cần đăng nhập)
+│       │   ├── Login.jsx             # Đăng nhập bằng Email & Password
+│       │   ├── CrudModal.jsx         # Popup Dialog dùng chung cho Create / Update + Validation
+│       │   ├── AccountManagement.jsx # [Admin] CRUD + Search tài khoản (chặn xóa nếu đã tạo bài viết)
+│       │   ├── CategoryManagement.jsx# [Staff] CRUD + Search danh mục (chặn xóa nếu đã có bài viết)
+│       │   ├── NewsManagement.jsx    # [Staff] CRUD + Search bài viết & gắn thẻ (Tags)
+│       │   ├── ProfileManagement.jsx # [Staff] Quản lý hồ sơ cá nhân
+│       │   └── NewsHistory.jsx       # [Staff] Xem lịch sử bài viết đã tạo
+│       ├── App.css
+│       ├── App.jsx
+│       └── main.jsx
+└── README.md
 ```
 
 ---
@@ -53,18 +60,18 @@ a2vuongvt_ce191082/
 
 ## 3. Hướng dẫn chạy dự án
 
-### Bước 1: Chạy Backend (Spring Boot - Cổng `8080`)
+### Bước 1: Chạy Backend (`BE` - Cổng `8080`)
 - Kết nối trực tiếp vào database MS SQL Server `FUNewsManagementSBA301` (`sa` / `123456`).
-- Mở thư mục `A2VuongVT_CE191082_BE` trong IntelliJ IDEA và chạy class `A2VuongvtCe191082Application`, hoặc chạy bằng Maven:
+- Chạy class `A2VuongvtCe191082Application` trong IntelliJ IDEA hoặc dùng lệnh:
 ```bash
-cd A2VuongVT_CE191082_BE
+cd BE
 mvn spring-boot:run
 ```
 
-### Bước 2: Chạy Frontend (ReactJS - Cổng `5173`)
-Tại thư mục gốc `a2vuongvt_ce191082`:
+### Bước 2: Chạy Frontend (`FE` - Cổng `5173`)
+- Bấm nút Run cấu hình `npm dev` trong IntelliJ IDEA hoặc mở terminal chạy:
 ```bash
-npm install
+cd FE
 npm run dev
 ```
 Truy cập trình duyệt tại: `http://localhost:5173`

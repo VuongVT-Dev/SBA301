@@ -1,3 +1,4 @@
+// Author: Thanh Vuong CE190182
 import React, { useState, useEffect } from "react";
 
 export default function CrudModal({ isOpen, mode, initialData, onClose, onSubmit, fields, title = "Category" }) {
