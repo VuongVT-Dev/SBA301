@@ -21,7 +21,7 @@ export default function Login({ users, onLoginSuccess }) {
             (u) =>
                 u.username.toLowerCase() === username.trim().toLowerCase() &&
                 ((u.password && u.password.toLowerCase() === password.trim().toLowerCase()) ||
-                    u.username.toLowerCase() === password.trim().toLowerCase())
+                    u.username.toLowerCase() === password.trim().toLowerCase()) // trim -> bỏ khoảng trống thừa
         );
 
         if (foundUser) {
