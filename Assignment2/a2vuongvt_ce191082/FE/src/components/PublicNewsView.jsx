@@ -1,8 +1,8 @@
 // Tác giả & coder: Thanh Vuong CE190182
-import React, {useState, useEffect} from "react";
-import api, {extractErrorMessage} from "../services/api";
+import React, { useState, useEffect } from "react";
+import api, { extractErrorMessage } from "../services/api";
 
-export default function PublicNewsView({currentUser, onGoToLogin, onGoToDashboard}) {
+export default function PublicNewsView({ currentUser, onGoToLogin, onGoToDashboard }) {
     const [articles, setArticles] = useState([]);
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(false);
@@ -35,12 +35,12 @@ export default function PublicNewsView({currentUser, onGoToLogin, onGoToDashboar
         <div className="public-container">
             <header className="public-header">
                 <div>
-                    <h1 style={{margin: 0, fontSize: "22px"}}>FUNews Management System</h1>
+                    <h1 style={{ margin: 0, fontSize: "22px" }}>FUNews Management System</h1>
                 </div>
                 <div>
                     {currentUser ? (
                         <button className="btn btn-primary" onClick={onGoToDashboard}>
-                            Vào trang Quản trị ({currentUser.accountName})
+                            Quay lại trang Quản trị ({currentUser.accountName})
                         </button>
                     ) : (
                         <button className="btn btn-primary" onClick={onGoToLogin}>
@@ -59,7 +59,7 @@ export default function PublicNewsView({currentUser, onGoToLogin, onGoToDashboar
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
-                    <div style={{display: "flex", gap: "8px"}}>
+                    <div style={{ display: "flex", gap: "8px" }}>
                         <button type="submit" className="btn btn-primary">
                             Tìm kiếm
                         </button>
@@ -90,7 +90,7 @@ export default function PublicNewsView({currentUser, onGoToLogin, onGoToDashboar
                                     <span className="badge badge-info">
                                         {item.category ? item.category.categoryName : "Chưa phân loại"}
                                     </span>
-                                    <span style={{fontSize: "12px", color: "#64748b"}}>
+                                    <span style={{ fontSize: "12px", color: "#64748b" }}>
                                         {item.createdDate ? new Date(item.createdDate).toLocaleDateString("vi-VN") : ""}
                                     </span>
                                 </div>
@@ -113,7 +113,7 @@ export default function PublicNewsView({currentUser, onGoToLogin, onGoToDashboar
                                 )}
 
                                 <div className="news-card-footer">
-                                    <span style={{fontSize: "12px", color: "#475569"}}>
+                                    <span style={{ fontSize: "12px", color: "#475569" }}>
                                         Tác giả: <b>{item.createdBy ? item.createdBy.accountName : "N/A"}</b>
                                     </span>
                                     <button
@@ -131,14 +131,14 @@ export default function PublicNewsView({currentUser, onGoToLogin, onGoToDashboar
 
             {selectedArticle && (
                 <div className="modal-overlay" onClick={() => setSelectedArticle(null)}>
-                    <div className="modal-box" style={{maxWidth: "650px"}} onClick={(e) => e.stopPropagation()}>
+                    <div className="modal-box" style={{ maxWidth: "650px" }} onClick={(e) => e.stopPropagation()}>
                         <div className="modal-header">
                             <h3>{selectedArticle.newsTitle}</h3>
                             <button className="modal-close-btn" onClick={() => setSelectedArticle(null)}>
                                 ✕
                             </button>
                         </div>
-                        <p style={{fontWeight: "600", color: "#334155", marginTop: 0}}>
+                        <p style={{ fontWeight: "600", color: "#334155", marginTop: 0 }}>
                             {selectedArticle.headline}
                         </p>
                         <div

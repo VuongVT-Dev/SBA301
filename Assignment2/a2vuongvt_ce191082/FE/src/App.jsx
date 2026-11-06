@@ -68,14 +68,14 @@ export default function App() {
     const isAdmin = currentUser.accountRole === 1;
     const menuItems = isAdmin
         ? [
-              { key: "accounts", label: "Quản lý Tài khoản (Account)" },
-          ]
+            { key: "accounts", label: "Quản lý Tài khoản (Account)" },
+        ]
         : [
-              { key: "news", label: "Quản lý Bài viết (News & Tags)" },
-              { key: "categories", label: "Quản lý Danh mục (Category)" },
-              { key: "history", label: "Lịch sử Bài viết của tôi" },
-              { key: "profile", label: "Hồ sơ cá nhân (Profile)" },
-          ];
+            { key: "news", label: "Quản lý Bài viết (News & Tags)" },
+            { key: "categories", label: "Quản lý Danh mục (Category)" },
+            { key: "history", label: "Lịch sử Bài viết của tôi" },
+            { key: "profile", label: "Hồ sơ cá nhân (Profile)" },
+        ];
 
     return (
         <div className="admin-layout">
@@ -102,7 +102,7 @@ export default function App() {
                         className="sidebar-item"
                         onClick={() => setScreen("public")}
                     >
-                        🌐 Xem Trang Tin Công Khai
+                        Quay lại dashboard
                     </li>
                 </ul>
 
@@ -121,7 +121,7 @@ export default function App() {
             <main className="main-area">
                 <header className="topbar">
                     <span style={{ fontWeight: "700", fontSize: "16px", color: "#1e293b" }}>
-                        Hệ Thống Quản Lý Tin Tức Đại Học FPT (FUNewsManagementSystem)
+                        Hệ Thống Quản Lý Tin Tức FU (FUNewsManagementSystem)
                     </span>
                     <span style={{ fontSize: "14px", color: "#475569" }}>
                         Xin chào, <b>{currentUser.accountName}</b> ({isAdmin ? "Admin" : "Staff"})
